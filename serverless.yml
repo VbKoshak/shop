@@ -1,4 +1,4 @@
-service: rss-app-node-aws-vboltrukanis-8
+service: rss-app-node-aws-vboltrukanis
 frameworkVersion: '2'
 
 plugins:
@@ -7,9 +7,9 @@ plugins:
 
 custom:
   client:
-    bucketName: rss-app-node-aws-vboltrukanis-8
+    bucketName: rss-app-node-aws-vboltrukanis
     distributionFolder: build
-  s3Bucket: rss-app-node-aws-vboltrukanis-8
+  s3Bucket: rss-app-node-aws-vboltrukanis
 
 provider:
   name: aws
@@ -50,7 +50,7 @@ resources:
           Origins:
             - DomainName: ${self:custom.s3Bucket}.s3.amazonaws.com
               ## An identifier for the origin which must be unique within the distribution
-              Id: shop8
+              Id: shop
               CustomOriginConfig:
                 HTTPPort: 80
                 HTTPSPort: 443
@@ -79,7 +79,7 @@ resources:
               - POST
               - PUT
             ## The origin id defined above
-            TargetOriginId: shop8
+            TargetOriginId: shop
             ## Defining if and how the QueryString and Cookies are forwarded to the origin which in this case is S3
             ForwardedValues:
               QueryString: 'false'
